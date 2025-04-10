@@ -11,6 +11,13 @@ class EmailValidatorTest {
         assertTrue(EmailValidator.isValidEmail(validEmail1))
     }
 
+    @Test
+    fun testValidEmail2() {
+        val validEmail2 = "123@abc.co.ca"
+        assertTrue(EmailValidator.isValidEmail(validEmail2))
+    }
+
+
 
 
 
