@@ -17,6 +17,12 @@ class EmailValidatorTest {
         assertTrue(EmailValidator.isValidEmail(validEmail2))
     }
 
+    @Test
+    fun testInvalidEmailWithIncorrectDomain() {
+        val invalidEmail = "123@abc"
+        assertFalse(EmailValidator.isValidEmail(invalidEmail))
+    }
+
 
 
 
