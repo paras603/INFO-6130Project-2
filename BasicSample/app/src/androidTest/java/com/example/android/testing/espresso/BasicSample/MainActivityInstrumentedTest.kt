@@ -56,4 +56,39 @@ class MainActivityInstrumentedTest {
         onView(withId(R.id.activityChangeTextBtn)).perform(click())
         onView(withId(R.id.show_text_view)).check(matches(withText("")))
     }
+
+            @Test
+    fun testOpenActivityWith123() {
+        onView(withId(R.id.editTextUserInput)).perform(clearText(), typeText("123"), closeSoftKeyboard())
+        onView(withId(R.id.activityChangeTextBtn)).perform(click())
+        onView(withId(R.id.show_text_view)).check(matches(withText("123")))
+    }
+
+    @Test
+    fun testChangeTextWithEmptyInput() {
+        onView(withId(R.id.editTextUserInput)).perform(clearText(), closeSoftKeyboard())
+        onView(withId(R.id.changeTextBt)).perform(click())
+        onView(withId(R.id.textToBeChanged)).check(matches(withText("")))
+    }
+
+    @Test
+    fun testOpenActivityWithEmptyInput() {
+        onView(withId(R.id.editTextUserInput)).perform(clearText(), closeSoftKeyboard())
+        onView(withId(R.id.activityChangeTextBtn)).perform(click())
+        onView(withId(R.id.show_text_view)).check(matches(withText("")))
+    }
+
+    @Test
+    fun testChangeTextWithAbcdef() {
+        onView(withId(R.id.editTextUserInput)).perform(typeText("abcdef"), closeSoftKeyboard())
+        onView(withId(R.id.changeTextBt)).perform(click())
+        onView(withId(R.id.textToBeChanged)).check(matches(withText("abcdef")))
+    }
+
+    @Test
+    fun testOpenActivityWithAbcdef() {
+        onView(withId(R.id.editTextUserInput)).perform(clearText(), typeText("abcdef"), closeSoftKeyboard())
+        onView(withId(R.id.activityChangeTextBtn)).perform(click())
+        onView(withId(R.id.show_text_view)).check(matches(withText("abcdef")))
+    }
 }
