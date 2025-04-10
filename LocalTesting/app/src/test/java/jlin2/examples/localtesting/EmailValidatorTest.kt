@@ -41,6 +41,10 @@ class EmailValidatorTest {
         assertFalse(EmailValidator.isValidEmail(invalidEmail))
     }
 
-
+    @Test
+    fun testInvalidEmailEmptyString() {
+        val emptyEmail = ""
+        assertFalse(EmailValidator.isValidEmail(emptyEmail))
+    }
 
 }
