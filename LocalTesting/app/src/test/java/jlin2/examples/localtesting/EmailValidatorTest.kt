@@ -29,6 +29,12 @@ class EmailValidatorTest {
         assertFalse(EmailValidator.isValidEmail(invalidEmail))
     }
 
+    @Test
+    fun testInvalidEmailWithOutUsername() {
+        val invalidEmail = "testing123"
+        assertFalse(EmailValidator.isValidEmail(invalidEmail))
+    }
+
 
 
 }
