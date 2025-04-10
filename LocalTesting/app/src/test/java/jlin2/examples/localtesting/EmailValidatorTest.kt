@@ -23,7 +23,11 @@ class EmailValidatorTest {
         assertFalse(EmailValidator.isValidEmail(invalidEmail))
     }
 
-
+    @Test
+    fun testInvalidEmailWithDoubleDots() {
+        val invalidEmail = "123@abc..com"
+        assertFalse(EmailValidator.isValidEmail(invalidEmail))
+    }
 
 
 
